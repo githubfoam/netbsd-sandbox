@@ -8,8 +8,7 @@ matrix:
   fast_finish: true
   include:
 
-    
-    - name: "NetBSD 7.0  provision bash Python 3.7 on bionic amd64"
+    - name: "NetBSD provision bash Python 3.7 on bionic amd64"
       dist: bionic
       arch: amd64
       language: python
@@ -22,28 +21,45 @@ matrix:
       script:
         - sudo make deploy-vagrant
         - sudo make deploy-libvirt
-        - sudo make deploy-netbsd7
+        - sudo make deploy-netbsd
       after_success:
         - deactivate
+
+    # - name: "NetBSD 7.0  provision bash Python 3.7 on bionic amd64"
+    #   dist: bionic
+    #   arch: amd64
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #     - sudo make deploy-vagrant
+    #     - sudo make deploy-libvirt
+    #     - sudo make deploy-netbsd7
+    #   after_success:
+    #     - deactivate
         # - sudo vagrant destroy -f # required to run Vagrantfile template        
         # - sudo rm Vagrantfile # required to run Vagrantfile template                                  
 
-    - name: "NetBSD 8.0  provision bash Python 3.7 on bionic amd64"
-      dist: bionic
-      arch: amd64
-      language: python
-      python: 3.7
-      before_install:
-        - pip3 install virtualenv
-        - virtualenv -p $(which python3) ~venvpy3
-        - source ~venvpy3/bin/activate
-        - pip install -r requirements.txt
-      script:
-        - sudo make deploy-vagrant
-        - sudo make deploy-libvirt
-        - sudo make deploy-netbsd8
-      after_success:
-        - deactivate
+    # - name: "NetBSD 8.0  provision bash Python 3.7 on bionic amd64"
+    #   dist: bionic
+    #   arch: amd64
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #     - sudo make deploy-vagrant
+    #     - sudo make deploy-libvirt
+    #     - sudo make deploy-netbsd8
+    #   after_success:
+    #     - deactivate
         # - sudo vagrant destroy -f # required to run Vagrantfile template        
         # - sudo rm Vagrantfile # required to run Vagrantfile template 
 
