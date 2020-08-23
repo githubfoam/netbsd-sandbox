@@ -1,3 +1,6 @@
+deploy-dragonflybsd:
+	bash scripts/deploy-dragonflybsd.sh
+
 deploy-netbsd9:
 	bash scripts/deploy-netbsd9.sh
 
