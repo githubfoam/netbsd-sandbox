@@ -9,7 +9,7 @@ matrix:
   include:
 
     
-    - name: "netbsd9 (generic) provision bash Python 3.7 on bionic amd64"
+    - name: "NetBSD 7.0  provision bash Python 3.7 on bionic amd64"
       dist: bionic
       arch: amd64
       language: python
@@ -22,13 +22,13 @@ matrix:
       script:
         - sudo make deploy-vagrant
         - sudo make deploy-libvirt
-        - sudo make deploy-netbsd9
+        - sudo make deploy-netbsd7
       after_success:
         - deactivate
         # - sudo vagrant destroy -f # required to run Vagrantfile template        
         # - sudo rm Vagrantfile # required to run Vagrantfile template                                  
 
-    - name: "netbsd8 (generic) provision bash Python 3.7 on bionic amd64"
+    - name: "NetBSD 8.0  provision bash Python 3.7 on bionic amd64"
       dist: bionic
       arch: amd64
       language: python
