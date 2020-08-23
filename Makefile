@@ -1,3 +1,6 @@
+deploy-netbsd:
+	bash scripts/deploy-netbsd.sh
+
 deploy-netbsd9:
 	bash scripts/deploy-netbsd9.sh
 
