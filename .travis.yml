@@ -25,8 +25,8 @@ matrix:
         - sudo make deploy-netbsd9
       after_success:
         - deactivate
-        - sudo vagrant destroy -f # required to run Vagrantfile template        
-        - sudo rm Vagrantfile # required to run Vagrantfile template                                  
+        # - sudo vagrant destroy -f # required to run Vagrantfile template        
+        # - sudo rm Vagrantfile # required to run Vagrantfile template                                  
 
     - name: "netbsd8 (generic) provision bash Python 3.7 on bionic amd64"
       dist: bionic
@@ -44,7 +44,7 @@ matrix:
         - sudo make deploy-netbsd8
       after_success:
         - deactivate
-        - sudo vagrant destroy -f # required to run Vagrantfile template        
-        - sudo rm Vagrantfile # required to run Vagrantfile template 
+        # - sudo vagrant destroy -f # required to run Vagrantfile template        
+        # - sudo rm Vagrantfile # required to run Vagrantfile template 
 
    
