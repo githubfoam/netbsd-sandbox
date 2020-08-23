@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
              config.vm.define "vg-gentoo-02" do |k8scluster|
                 k8scluster.vm.box = "generic/gentoo"
                 k8scluster.vm.hostname = "vg-gentoo-02"
-                k8scluster.vm.box_version = "0.0.1"
+                <%# k8scluster.vm.box_version = "3.0.28" %>
                 k8scluster.vm.network "private_network", ip: "192.168.50.15"
                 #Disabling the default /vagrant share can be done as follows:
                 k8scluster.vm.synced_folder ".", "/vagrant", disabled: true
