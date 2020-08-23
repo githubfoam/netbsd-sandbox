@@ -3,14 +3,14 @@
 Travis (.com) branch:
 [![Build Status](https://travis-ci.com/githubfoam/netbsd-sandbox.svg?branch=dev)](https://travis-ci.com/githubfoam/netbsd-sandbox)  
 
+run locally
 ~~~~
->vagrant init --template Vagrantfile.provision.bash.ubuntu.erb
+>vagrant init --template Vagrantfile.provision.bash.netbsd.erb
 >dir
->vagrant up "kuma-control-plane"
->vagrant up "redis"
+>vagrant up "vg-netbsd-03"
 
->vagrant destroy -f "kuma-control-plane"
->vagrant destroy -f "redis
+
+>vagrant destroy -f "vg-netbsd-03"
 
 >vagrant global-status
 

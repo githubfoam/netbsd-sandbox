@@ -40,7 +40,6 @@ Vagrant.configure(2) do |config|
              config.vm.define "vg-netbsd-02" do |k8scluster|
                 k8scluster.vm.box = "NetBSD/NetBSD-8.0"
                 k8scluster.vm.hostname = "vg-netbsd-02"
-                <%# k8scluster.vm.network "private_network", ip: "192.168.50.15" %>
                 #Disabling the default /vagrant share can be done as follows:
                 k8scluster.vm.synced_folder ".", "/vagrant", disabled: true
                 k8scluster.vm.provider "virtualbox" do |vb|
@@ -67,9 +66,6 @@ Vagrant.configure(2) do |config|
                 k8scluster.vm.box = "generic/netbsd9"
                 k8scluster.vm.hostname = "vg-netbsd-03"
 
-                <%# sbin/ifconfig wm1 media autoselect up;/sbin/ifconfig wm1 inet 192.168.50.15 netmask 255.255.255.0
-                ifconfig: SIOCGIFMEDIA: Device not configure %>
-                <%# k8scluster.vm.network "private_network", ip: "192.168.48.108" %>
                 
                 #Disabling the default /vagrant share can be done as follows:
                 k8scluster.vm.synced_folder ".", "/vagrant", disabled: true
@@ -96,7 +92,7 @@ Vagrant.configure(2) do |config|
              config.vm.define "vg-netbsd-04" do |k8scluster|
                 k8scluster.vm.box = "generic/netbsd8"
                 k8scluster.vm.hostname = "vg-netbsd-04"
-                <%# k8scluster.vm.network "private_network", ip: "192.168.50.15" %>
+                k8scluster.vm.network "private_network", ip: "192.168.50.15"
                 #Disabling the default /vagrant share can be done as follows:
                 k8scluster.vm.synced_folder ".", "/vagrant", disabled: true
                 k8scluster.vm.provider "virtualbox" do |vb|
