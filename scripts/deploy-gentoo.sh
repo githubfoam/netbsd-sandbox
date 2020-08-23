@@ -87,7 +87,7 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 # vagrant init --template Vagrantfile.provision.bash.netbsd.erb
 # vagrant up --provider=libvirt "vg-netbsd-04"
 
-# https://app.vagrantup.com/dragonflybsd/boxes/dragonfly520
+# https://app.vagrantup.com/generic/boxes/gentoo
 vagrant box add "generic/gentoo" --provider=virtualbox
 vagrant init --template Vagrantfile.provision.bash.generic.erb
 vagrant up --provider=libvirt "vg-gentoo-02"
