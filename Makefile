@@ -1,4 +1,5 @@
 deploy-dcos:
+	@echo "Deploying DC/OS"
 	bash scripts/deploy-dcos.sh
 
 deploy-gentoo:
