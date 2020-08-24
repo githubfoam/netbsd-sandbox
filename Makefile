@@ -1,3 +1,6 @@
+deploy-dcos:
+	bash scripts/deploy-dcos.sh
+
 deploy-gentoo:
 	bash scripts/deploy-gentoo.sh
 
