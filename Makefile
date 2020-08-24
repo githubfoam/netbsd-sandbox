@@ -1,3 +1,7 @@
+deploy-dcos-puppet:
+	@echo "Deploying DC/OS"
+	bash scripts/deploy-dcos-puppet.sh
+
 deploy-dcos:
 	@echo "Deploying DC/OS"
 	bash scripts/deploy-dcos.sh
