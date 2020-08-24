@@ -46,6 +46,33 @@ matrix:
         - sudo vagrant destroy -f # required to run Vagrantfile template        
         - sudo rm Vagrantfile # required to run Vagrantfile template
 
+    - name: "DC/OS Python 3.7.5 on macOS xcode10.2"
+      os: osx
+      osx_image: xcode10.2  # travis-ci-macos10.14-xcode10.2-19-1573099784 (via amqp)
+      addons:
+        homebrew:
+          casks:
+          - virtualbox
+          - vagrant
+          packages:
+          - ansible
+          update: true
+      language: shell # 'language: python' is an error on Travis CI macOS
+      before_install:
+        - pip3 install virtualenv
+        - virtualenv -p $(which python3) ~venvpy3
+        - source ~venvpy3/bin/activate
+      install:
+        - pip3 install codecov
+        - pip install -r requirements.txt
+      script:
+        - vagrant plugin install vagrant-hostsupdater
+        - vagrant plugin install vagrant-vbguest
+        # - vagrant up
+        # - vagrant destroy -f
+      after_success:
+        - deactivate
+
     # https://www.gentoo.org/   
     # TESTED OK 
     # - name: "gentoo provision bash Python 3.7 on bionic amd64"
